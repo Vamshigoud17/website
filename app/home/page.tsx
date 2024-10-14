@@ -12,6 +12,7 @@ import { auth, db } from '../../firebase'
 import { collection, getDocs } from "firebase/firestore"
 import { signOut } from "firebase/auth"
 import { useRouter } from 'next/navigation'
+import Image from 'next/image'
 
 interface Item {
   id: string;
@@ -164,7 +165,7 @@ export default function BusinessWebsite() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
           {items.map((item) => (
             <div key={item.id} className="bg-white rounded-lg shadow-md overflow-hidden">
-              <img
+              <Image
                 src={`/placeholder.svg?height=200&width=300`}
                 alt={item.name}
                 className="w-full h-48 object-cover"
